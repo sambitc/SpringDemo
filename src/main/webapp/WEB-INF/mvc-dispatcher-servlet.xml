@@ -26,13 +26,30 @@
     <bean class="com.mkyong.controller.WelcomeController" />
  
     <bean id="viewResolver"
-              class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
             <value>/WEB-INF/pages/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>
         </property>
+    </bean>
+    
+    <!--Customer form form settings-->
+    <bean class="com.mkyong.customer.controller.CustomerController">
+        <property name="formView" value="CustomerForm" />
+        <property name="successView" value="CustomerSuccess" />
+ 
+        <!-- Map a validator -->
+        <property name="validator">
+            <bean class="com.mkyong.customer.validator.CustomerValidator" />
+        </property>
+    </bean>
+ 
+    <!-- Register the Customer.properties -->
+    <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="com/mykong/customer/properties/Customer" />
     </bean>
  
 </beans>
