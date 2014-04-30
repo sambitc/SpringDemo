@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BaseController {
  
 	@RequestMapping(value="/message", method = RequestMethod.GET)
-	public String welcome(ModelMap model) {
+	public String welcome(ModelMap model) { 
  
 		model.addAttribute("message", "Maven Web Project + Spring 3 MVC - welcome()");
  
