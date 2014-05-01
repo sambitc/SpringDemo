@@ -26,7 +26,11 @@ public class CustomerController extends SimpleFormController {
 
         Customer customer = (Customer) command;
         System.out.println(customer);
-        return new ModelAndView("CustomerSuccess", "customer", customer);
+
+        //put the model in session, so that it's able pass to another controller
+        request.getSession().setAttribute("customer", customer);
+
+        return new ModelAndView("customerSuccessRedirect");
 
     }
 
