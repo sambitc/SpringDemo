@@ -32,7 +32,7 @@ public class UserController extends AbstractWizardFormController {
         System.out.println(user);
 
         //where is the finish page?
-        return new ModelAndView("multipageForms/ResultForm", "user", user);
+        return new ModelAndView("multipageForms/ResultForm", "user1", user);
     }
 
     @Override
